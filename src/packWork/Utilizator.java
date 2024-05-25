@@ -27,7 +27,7 @@ public class Utilizator {
         return CNP;
     }
     public void setCNP(String CNP) {
-        if(CNP.length() != 13 || !CNP.matches("[0-9]+")) {
+        if(CNP.length() == 13 && CNP.matches("[0-9]+")) {
             this.CNP = CNP;
         } else {
             System.out.println("CNP invalid!");
@@ -43,7 +43,7 @@ public class Utilizator {
         return nrTelefon;
     }
     public void setNrTelefon(String nrTelefon) {
-        if(nrTelefon.length() != 10 || !nrTelefon.matches("[0-9]+")) {
+        if(nrTelefon.length() == 10 && nrTelefon.matches("[0-9]+")) {
             this.nrTelefon = nrTelefon;
         } else {
             System.out.println("Numar telefon invalid!");
@@ -53,7 +53,7 @@ public class Utilizator {
         return nrMatricol;
     }
     public void setNrMatricol(String nrMatricol) {
-        if(nrMatricol.length() != 6 || !nrMatricol.matches("[0-9]+")) {
+        if(nrMatricol.length() == 6 && nrMatricol.matches("[0-9]+")) {
             this.nrMatricol = nrMatricol;
         } else {
             System.out.println("Numar matricol invalid!");
@@ -78,17 +78,25 @@ public class Utilizator {
     }
 
     public boolean dateValide() {
+
+        if(CNP == null || nrMatricol == null || nrTelefon == null)
+            return false;
         
-        if(CNP.length() != 13 || !CNP.matches("[0-9]+")) {
-            return false;
+        if(CNP != null) {
+            if(CNP.length() != 13 || !CNP.matches("[0-9]+")) {
+                return false;
+            }
         }
-
-        if(nrMatricol.length() != 6 || !nrMatricol.matches("[0-9]+")) {
-            return false;
+        if(nrMatricol != null) {
+            if(nrMatricol.length() != 6 || !nrMatricol.matches("[0-9]+")) {
+                return false;
+            }
         }
-
-        if(nrTelefon.length() != 10 || !nrTelefon.matches("[0-9]+")) {
-            return false;
+        
+        if(nrTelefon != null) {
+            if(nrTelefon.length() != 10 || !nrTelefon.matches("[0-9]+")) {
+                return false;
+            }   
         }
 
         return true;

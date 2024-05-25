@@ -16,15 +16,15 @@ public class GestionareImprumuturi {
         this.biblioteca = biblioteca;
     }
 
-    public void imprumutaCarte(Utilizator u, Carte c) {
+    public boolean imprumutaCarte(Utilizator u, Carte c) {
         if(!biblioteca.existaCarte(c)) {
             System.out.println("Cartea '" + c.titlu + "' nu este disponibila!\n");
-            return;
+            return false;
         }
 
         if(u.nrCartiImprumutate >= Utilizator.nrMaximCartiImprumutate) {
             System.out.println("Avertizare! " + u.nume + ", ai depasit numarul de carti imprumutate!\n");
-            return;
+            return false;
         }
 
         if (!ListaImprumuturi.containsKey(u)) {
@@ -34,6 +34,8 @@ public class GestionareImprumuturi {
         ListaImprumuturi.get(u).add(c);
         biblioteca.Carti.remove(c);
         u.nrCartiImprumutate++;
+
+        return true;
     }
 
     public void afisareLista() {
