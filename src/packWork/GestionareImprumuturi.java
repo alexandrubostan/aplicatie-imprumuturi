@@ -18,7 +18,7 @@ public class GestionareImprumuturi {
 
     public void imprumutaCarte(Utilizator u, Carte c) {
         if(!biblioteca.existaCarte(c)) {
-            System.out.println("Cartea nu este disponibila!");
+            System.out.println("Cartea '" + c.titlu + "' nu este disponibila!\n");
             return;
         }
 
@@ -32,6 +32,7 @@ public class GestionareImprumuturi {
         }
 
         ListaImprumuturi.get(u).add(c);
+        biblioteca.Carti.remove(c);
         u.nrCartiImprumutate++;
     }
 
@@ -69,5 +70,7 @@ public class GestionareImprumuturi {
         System.out.println("Numarul matricol nu a fost gasit!");
     }
 
-    
+    public void afisareCartiDisponibile() {
+        this.biblioteca.afisareCarti();
+    }
 }

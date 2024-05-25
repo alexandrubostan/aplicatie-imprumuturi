@@ -77,14 +77,7 @@ public class Utilizator {
         this.nrCartiImprumutate = 0;
     }
 
-
-    public boolean dateValide(
-        String nume, 
-        String dataNastere, 
-        String CNP,
-        String email, 
-        String nrTelefon, 
-        String nrMatricol) {
+    public boolean dateValide() {
         
         if(CNP.length() != 13 || !CNP.matches("[0-9]+")) {
             return false;

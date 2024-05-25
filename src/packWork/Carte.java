@@ -5,7 +5,6 @@ public class Carte {
     String numeAutor;
     String editura;
 
-    boolean disponibilitate;
 
     public String getTitlu() {
         return titlu;
@@ -35,14 +34,6 @@ public class Carte {
         setEditura(editura);
         setNumeAutor(numeAutor);
         setTitlu(titlu);
-        setDisponibil();
     }
 
-    public boolean isDisponibil() {
-        return disponibilitate;
-    }
-
-    public void setDisponibil() {
-        this.disponibilitate = true;
-    }
 }

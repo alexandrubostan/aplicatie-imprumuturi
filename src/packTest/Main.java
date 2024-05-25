@@ -9,8 +9,8 @@ public class Main {
         Carte c3 = new Carte("Fluturi", "Irina Binder", "Rao");
         Carte c4 = new Carte("Ultima Noapte de Dragoste, Intaia Noapte de Razboi", "Camil Petrescu", "Litera");
 
-        Utilizator u1 = new Utilizator("ion", "2382", "453252", "dsadsaads@yahoo.com", "401295329", "23232");
-        Utilizator u2 = new Utilizator("aida", "2382", "34342", "aidaanozo@yahoo.com", "401295329", "5454");
+        Utilizator u1 = new Utilizator("Ion Nastase", "10.12.2003", "1850715410011", "dsadsaads@yahoo.com", "401295329", "23232");
+        Utilizator u2 = new Utilizator("Aida", "18.10.2002", "2900323240029", "aidaanozo@yahoo.com", "401295329", "5454");
 
 
         Biblioteca b1 = new Biblioteca();
@@ -22,12 +22,15 @@ public class Main {
 
         GestionareImprumuturi g1 = new GestionareImprumuturi(b1);
 
+        g1.afisareCartiDisponibile();
+
         g1.imprumutaCarte(u1,c1);
         g1.imprumutaCarte(u1,c2);
-        g1.imprumutaCarte(u1,c3);
         g1.imprumutaCarte(u1,c4);
         g1.imprumutaCarte(u2,c1);
         g1.imprumutaCarte(u2,c2);
+
+        g1.afisareCartiDisponibile();
 
         g1.afisareLista();
     }

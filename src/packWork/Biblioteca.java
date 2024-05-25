@@ -30,4 +30,14 @@ public class Biblioteca {
         }
         return false;
     }
+
+    public void afisareCarti() {
+
+        System.out.println("Cartile disponibile sunt:");
+
+        for(Carte var : Carti) {
+            System.out.println(var.titlu);
+        }
+        System.out.println();
+    }
 }
